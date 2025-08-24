@@ -1,0 +1,7 @@
+names:
+  0: helmet
+  1: no_helmet
+path: /content/drive/MyDrive/PhawAI/DeepLearning/datacas/YOLODataset
+test: images/test
+train: images/train
+val: images/val
