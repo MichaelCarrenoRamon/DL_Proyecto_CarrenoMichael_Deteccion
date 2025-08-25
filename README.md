@@ -40,23 +40,13 @@ Se entrenaron tres variantes de YOLOv8 en **Google Colab** con GPU NVIDIA T4:
 Ejemplos de detecciones realizadas en el conjunto de prueba:
 
 <p align="center">
-  <img src="images/ejemplo1.jpg" width="30%">
-  <img src="images/ejemplo2.jpg" width="30%">
-  <img src="images/ejemplo3.jpg" width="30%">
+  <img src="YOLO_results/yolov8m_helmet/train_batch0.jpg" width="30%">
+  <img src="YOLO_results/yolov8n_helmet3/train_batch0.jpg" width="30%">
+  <img src="YOLO_results/yolov8s_helmet/train_batch0.jpg" width="30%">
 </p>
 
 ---
-
-## 🔬 Matrices de confusión
-Comparación entre clasificación absoluta y normalizada por cada modelo:
-
-<p align="center">
-  <img src="images/m_confusion_matrix.png" width="45%">
-  <img src="images/m_confusion_matrix_normalized.png" width="45%">
-</p>
-
----
-
+ages/ejemplo3.jpg
 ## 🚀 Cómo ejecutar el proyecto
 
 1. Clonar el repositorio:
