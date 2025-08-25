@@ -1,18 +1,34 @@
 # 🏍️ Detección de uso de casco en motociclistas con YOLOv8
 
-Este proyecto implementa un sistema de **detección automática del uso de cascos en motociclistas** utilizando tres variantes del modelo **YOLOv8** (`nano`, `small` y `medium`).  
-El objetivo es comparar el rendimiento de cada modelo y evaluar su aplicabilidad en sistemas de **seguridad vial inteligente**.
+Este proyecto implementa un sistema de **detección automática del uso de cascos en motociclistas** utilizando tres variantes de **YOLOv8** (`nano`, `small` y `medium`).  
+El objetivo es comparar el rendimiento de los modelos y determinar cuál logra un mejor equilibrio entre **precisión** y **eficiencia computacional**.
 
 ---
 
-## 📊 Descripción del proyecto
-- **Tarea:** Detección de objetos (casco vs. no casco).  
-- **Dataset:** [Helmet Detection Dataset - Kaggle](https://www.kaggle.com/datasets/andrewmvd/helmet-detection)  
-- **Formatos:** Original VOC, convertido a formato YOLO.  
-- **División:** 
-  - 70% entrenamiento (534 imágenes)  
-  - 20% validación (153 imágenes)  
-  - 10% prueba (78 imágenes)  
+## 📂 Ruta elegida y dataset
+
+- **Ruta elegida:** Detección de objetos.  
+- **Dataset:** [Helmet Detection Dataset - Kaggle](https://www.kaggle.com/datasets/andrewmvd/helmet-detection) (Licencia CC BY 4.0).  
+- **Clases:** `helmet`, `no_helmet`.  
+- **Formato original:** VOC, convertido a formato YOLO.  
+- **División:**  
+  - 70% entrenamiento  
+  - 20% validación  
+  - 10% prueba  
+
+---
+
+## ⚙️ Cómo ejecutar
+
+Este proyecto puede ejecutarse en **Google Colab** o en local (Jupyter Notebook).  
+Se recomienda usar **GPU** (por ejemplo, NVIDIA T4 en Colab).
+
+1. Abrir el notebook en Colab:
+   - [![Abrir en Colab](https://drive.google.com/drive/folders/1so2NlO_HlODBnwwim4ImRl7GQGlcC3Rh?usp=drive_link)]
+
+2. Configurar el entorno con:
+   ```bash
+   pip install ultralytics opencv-python matplotlib
 
 ---
 
@@ -53,3 +69,28 @@ ages/ejemplo3.jpg
    ```bash
    git clone https://github.com/MichaelCarrenoRamon/DL_Proyecto_CarrenoMichael_Deteccion.git
    cd DL_Proyecto_CarrenoMichael_Deteccion
+
+🚀 Cómo entrenar y evaluar
+
+- Entrenamiento de un modelo YOLOv8:
+
+yolo detect train data=data.yaml model=yolov8n.pt epochs=10 imgsz=640
+
+
+- Evaluación del modelo entrenado:
+
+yolo detect val model=runs/detect/train/weights/best.pt data=data.yaml
+
+
+- Predicción sobre imágenes de prueba:
+
+yolo detect predict model=runs/detect/train/weights/best.pt source=images/test/
+
+---
+
+## 👨‍💻 Autor
+
+Michael Enrique Carreño Ramón
+Facultad de Ingeniería en Tecnologías de la Información
+Universidad Técnica de Machala
+📧 michaelcarreno30@gmail.com
